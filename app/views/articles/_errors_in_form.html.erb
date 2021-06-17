@@ -1,0 +1,10 @@
+<% if @article.errors.any? %>
+  <h2>Some errors in your form submission: </h2>
+
+  <ul>
+    <% @article.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+
+<% end %>
