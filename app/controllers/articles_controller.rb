@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    @page_name = 'Article Listings'
     @article_list = Article.all
   end
 
