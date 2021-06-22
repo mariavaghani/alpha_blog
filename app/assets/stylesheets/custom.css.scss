@@ -1,22 +1,118 @@
 @import "bootstrap/dist/css/bootstrap";
-@import "bootstrap/dist/css/bootstrap.min.css";
 
 
-.bg-light {
-  background-color: #FDF6EA !important;
-}
+// custom-pink #F3E6E6
 
 .navbar {
-  background-color: #FDF6EA !important;
+  background-color: #F3E6E6 !important;
+  border:10px solid #EEEEEE;
+  border-bottom-right-radius: 47px;
+  border-bottom-left-radius: 47px;
+  margin: 0px;
+  padding: 25px;
 }
 
-
-.navbar-brand {
-  font-size: 3rem;
+.nav-link {
+  color: #707070 !important;
+  font-family: Stolzl !important;
+  font-style: light;
+  font-size: 17px;
 }
 
+#container-home {
+  margin-top: 150px;
+  background-color: #F3E6E6;
+  border-radius: 47px;
+  border:10px solid #EEEEEE;
+}
 
+#container-about {
+  margin-top: 15px;
+  background-color: #F3E6E6;
+  border-radius: 47px;
+  border:10px solid #EEEEEE;
+}
 
-h1 {
-  color: red;
+#container-buttons {
+  margin-top: 15px;
+}
+
+.container {
+  padding: 0px !important;
+}
+
+.font-weight-bold {
+  font-style: bold !important;
+}
+
+.alpha-blog-logo {
+  font-family: Stolzl;
+  font-style: bold;
+  font-size: 90px;
+  text-align: center;
+  margin-bottom:0;
+  margin-top: 15px;
+  line-height: 1;
+}
+.alpha-blog-logo-it {
+  font-family: Zeitung Pro;
+  font-style: thin italic;
+  font-size: 35px;
+  text-align: center;
+  margin-top:0;
+  margin-bottom: 15px;
+  padding-top:0;
+  line-height: 0.75;
+}
+
+.btn-primary {
+  background-color: #F3E6E6 !important;
+  border:10px solid #EEEEEE !important;
+  border-radius: 47px !important;
+
+}
+
+.regular-text {
+  color: #707070 !important;
+  font-family: Stolzl !important;
+  font-style: light;
+  font-size: 20px;
+  margin: 20px;
+  justify-content: center;
+  text-align: center;
+}
+.jumbotron {
+  margin: 20px;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  margin-bottom: 0 !important;
+  padding-bottom: 0!important;
+}
+
+html,
+body {
+  height: 100%;
+  background: url(alphablog-background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#links-footer {
+  text-align: right;
+  line-height: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#text-bottom {
+  position:relative;
+  bottom: 0;
 }

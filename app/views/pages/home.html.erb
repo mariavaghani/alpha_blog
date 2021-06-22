@@ -1,6 +1,20 @@
-<h1>Hello World</h1>
-<p>This is just a paragraph</p>
-<p>
-  <%= link_to 'Go to articles', articles_path %> |
-  <%= link_to 'about', about_path %>
-</p>
+<div class="container" id="container-home">
+  <%= render 'layouts/alpha_blog_logo_header' %>
+</div>
+
+<div class="container" id='container-buttons'>
+  <div class="row">
+    <div class="col-sm">
+      <a class="btn btn-primary nav-link" href=<%= about_path %> role="button">about</a>
+    </div>
+    <div class="col-sm">
+      <a class="btn btn-primary nav-link" href='#' role="button">users</a>
+    </div>
+    <div class="col-sm">
+      <a class="btn btn-primary nav-link" href=<%= articles_path %> role="button">articles</a>
+    </div>
+    <div class="col-sm">
+      <a class="btn btn-primary nav-link" href='#' role="button">login</a>
+    </div>
+  </div>
+</div>

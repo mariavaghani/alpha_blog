@@ -1,5 +1,25 @@
-<h1>This is about page</h1>
-<p>
-  <%= link_to 'Go to articles', articles_path %> |
-  <%= link_to 'main', root_path %>
-</p>
+<div class="container" id="container-about">
+  <%= render 'layouts/alpha_blog_logo_header' %>
+</div>
+
+<div class="container" id="container-about">
+  <p class='regular-text'>This website is created so you could share your thoughts in a way that makes you feel better. No one is judging you here, you are writing for everyone and no one. There is no privacy settings, no registration, no rules. You are writing your story, you are writing stories of others, and others write stories of you...
+It is the outlet for everyone and no one.</p>
+</div>
+
+<div class="container" id='container-buttons'>
+  <div class="row">
+    <div class="col-sm">
+      <a class="btn btn-primary nav-link" href=<%= root_path %> role="button">main</a>
+    </div>
+    <div class="col-sm">
+      <a class="btn btn-primary nav-link" href='#' role="button">users</a>
+    </div>
+    <div class="col-sm">
+      <a class="btn btn-primary nav-link" href=<%= articles_path %> role="button">articles</a>
+    </div>
+    <div class="col-sm">
+      <a class="btn btn-primary nav-link" href='#' role="button">login</a>
+    </div>
+  </div>
+</div>
