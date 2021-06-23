@@ -1,9 +1,40 @@
-<h1>Showing article details</h1>
-<p><strong>Title: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
-<p>
-  <%= link_to 'Back to articles', articles_path %> |
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-  <%= link_to 'Delete', article_path(@article), method: :delete,
-    data: { confirm: "Are you sure you want to delete article #{@article.title}?" } %>
-</p>
+<div class="container" id="container-about">
+  <%= render 'layouts/alpha_blog_logo_header' %>
+</div>
+
+<div class="row justify-content-md-center">
+  <div class="col-8">
+    <div class="container text-center shadow mt-4" id='container-about'>
+      <div class="card-header regular-text-s">
+        By Maria Vaghani
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-bold"><%= @article.title %></h5>
+        <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+        <p class="card-text"><i>Tags: </i><%= @article.genre %></p>
+      </div>
+      <div class="card-footer text-muted">
+        <small>
+          Created <%= time_ago_in_words(@article.created_at) %> ago,
+          Updated <%= time_ago_in_words(@article.updated_at) %> ago
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-md-center mt-3">
+  <div class="col-8">
+    <div class="row justify-content-md-center">
+      <div class="col-sm">
+        <a class="btn btn-primary nav-link" href=<%= articles_path %> role="button">Back to articles</a>
+      </div>
+      <div class="col-sm">
+        <a class="btn btn-primary nav-link" href=<%= edit_article_path(@article) %> role="button">Edit</a>
+      </div>
+      <div class="col-sm">
+        <%= link_to 'Delete', article_path(@article), method: :delete,
+          data: { confirm: "Are you sure you want to delete article #{@article.title}?" }, class: 'btn btn-primary nav-link' %>
+      </div>
+    </div>
+  </div>
+</div>

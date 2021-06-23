@@ -105,8 +105,17 @@
   text-align: center;
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 .jumbotron {
   margin: 20px;
+}
+
+.index-card-lr {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .card {
