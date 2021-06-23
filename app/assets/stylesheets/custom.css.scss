@@ -41,6 +41,10 @@
   padding: 0px !important;
 }
 
+.container-spacious {
+  padding: 15px !important;
+}
+
 .font-weight-bold {
   font-style: bold !important;
 }
@@ -78,6 +82,9 @@
   font-style: light;
   font-size: 20px;
   margin: 20px;
+}
+
+.justify-center {
   justify-content: center;
   text-align: center;
 }
@@ -87,14 +94,12 @@
   font-family: Stolzl !important;
   font-style: light;
   font-size: 15px;
-  justify-content: center;
-  text-align: center;
 }
 
 .text-bold {
   color: #707070 !important;
   font-family: Stolzl !important;
-  font-style: bold;
+  font-style: bold !important;
   font-size: 17px;
   justify-content: center;
   text-align: center;

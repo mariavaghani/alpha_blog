@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @page_name = 'Create New Article'
     @article = Article.new
   end
 
@@ -26,7 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-
+    @page_name = 'Edit Article'
   end
 
   def update

@@ -1,22 +1,39 @@
+<div class="container" id="container-about">
+  <%= render 'layouts/alpha_blog_logo_header' %>
+</div>
 <%= render 'errors_in_form' %>
 
+
 <%= form_with(model: @article, local: true) do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %> <br>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :genre %><br>
-    <%= f.text_field :genre %>
-  </p>
-  <p>
-    <%= f.submit %>
+  <div class="container-spacious" id='container-about'>
+    <div class="row">
+      <div class="col-sm form-group regular-text">
+        <%= f.label :title  %><br>
+        <%= f.text_field :title, class: "form-control", placeholder: "title your article" %>
+      </div>
+      <div class="col-sm form-group regular-text">
+        <%= f.label :genre %><br>
+        <%= f.text_field :genre, class: "form-control", placeholder: 'genre' %>
+      </div>
+    </div>
+    <div class="form-group regular-text">
+      <%= f.label :description %> <br>
+      <%= f.text_area :description, rows:7, class: "form-control", placeholder: 'Write your article here' %>
+    </div>
+  </div>
 
-  </p>
-
+  <div class="container" id='container-buttons'>
+    <div class="row">
+      <div class="col-sm">
+        <a class="btn btn-primary nav-link" href=<%= root_path %> role="button">main</a>
+      </div>
+      <div class="col-sm">
+        <a class="btn btn-primary nav-link" href=<%= articles_path %> role="button">articles</a>
+      </div>
+      <div class="col-sm">
+        <%= f.submit "Save Article", class: "btn btn-primary nav-link submit-btn", style: "height:100%; width:100%" %>
+      </div>
+    </div>
+  </div>
 
 <% end %>
