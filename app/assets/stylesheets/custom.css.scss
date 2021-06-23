@@ -29,7 +29,7 @@
 #container-about {
   margin-top: 15px;
   background-color: #F3E6E6;
-  border-radius: 47px;
+  border-radius: 47px !important;
   border:10px solid #EEEEEE;
 }
 
@@ -124,6 +124,11 @@
 .card-footer {
   border-bottom-left-radius: 47px !important;
   border-bottom-right-radius: 47px !important;
+}
+
+.btn-100 {
+  height:100%;
+  width:100%;
 }
 
 html,
