@@ -1,10 +1,10 @@
-<% if @article.errors.any? %>
+<% if obj.errors.any? %>
   <div class="alert alert-danger alert-dismissible mt-3 regular-text-s" role="alert">
     <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span>
     </button>
     <h4 class="alert-heading">Some errors in your form submission:</h4>
     <ul>
-      <% @article.errors.full_messages.each do |error| %>
+      <% obj.errors.full_messages.each do |error| %>
         <li><%= error %></li>
       <% end %>
     </ul>

@@ -1,0 +1,47 @@
+<div class="container" id="container-about">
+  <%= render 'layouts/alpha_blog_logo_header' %>
+</div>
+<%= render 'shared/errors', obj: @user %>
+
+
+<%= form_with(model: @user, local: true) do |f| %>
+  <div class="row justify-content-md-center">
+    <div class="col-8 text-center">
+      <div class="spacious-rl-160" id='container-about'>
+        <div class="form-group regular-text">
+          <%= f.label :username  %><br>
+          <%= f.text_field :username, class: "form-control text-center", placeholder: "enter your username" %>
+        </div>
+
+        <div class="form-group regular-text">
+          <%= f.label :email %> <br>
+          <%= f.email_field :email, class: "form-control text-center", placeholder: 'provide your email address' %>
+        </div>
+
+        <div class="form-group regular-text">
+          <%= f.label :password %> <br>
+          <%= f.password_field :password, class: "form-control text-center", placeholder: 'enter your password' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <div class="col-8">
+      <div class="container" id='container-buttons'>
+        <div class="row">
+          <div class="col-sm">
+            <a class="btn btn-primary nav-link btn-100" href=<%= root_path %> role="button">main</a>
+          </div>
+          <div class="col-sm">
+            <a class="btn btn-primary nav-link btn-100" href=<%= articles_path %> role="button">articles</a>
+          </div>
+          <div class="col-sm">
+            <%= f.submit "Sign Up", class: "btn btn-primary nav-link submit-btn", style: "height:100%; width:100%" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

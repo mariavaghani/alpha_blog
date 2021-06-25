@@ -41,8 +41,15 @@
   padding: 0px !important;
 }
 
-.container-spacious {
+.spacious-15 {
   padding: 15px !important;
+}
+
+.spacious-rl-160 {
+  padding-left: 160px !important;
+  padding-right: 160px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
 
 .font-weight-bold {
@@ -107,6 +114,10 @@
 
 .text-left {
   text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 .jumbotron {

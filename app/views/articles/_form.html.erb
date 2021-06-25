@@ -1,11 +1,11 @@
 <div class="container" id="container-about">
   <%= render 'layouts/alpha_blog_logo_header' %>
 </div>
-<%= render 'shared/errors' %>
+<%= render 'shared/errors', obj: @article %>
 
 
 <%= form_with(model: @article, local: true) do |f| %>
-  <div class="container-spacious" id='container-about'>
+  <div class="spacious-15" id='container-about'>
     <div class="row">
       <div class="col-sm form-group regular-text">
         <%= f.label :title  %><br>
