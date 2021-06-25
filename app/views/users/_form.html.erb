@@ -37,7 +37,7 @@
             <a class="btn btn-primary nav-link btn-100" href=<%= articles_path %> role="button">articles</a>
           </div>
           <div class="col-sm">
-            <%= f.submit "Sign Up", class: "btn btn-primary nav-link submit-btn", style: "height:100%; width:100%" %>
+            <%= f.submit(@user.new_record? ? "Sign Up" : "Save Changes", class: "btn btn-primary nav-link submit-btn", style: "height:100%; width:100%") %>
           </div>
         </div>
       </div>

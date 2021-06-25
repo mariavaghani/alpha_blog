@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :set_user, only: [:edit, :update, :destroy]
+
   def new
     @page_name = 'Sign up for Alpha BLog'
     @user = User.new
@@ -14,10 +17,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @page_name = 'Edit User Information'
+  end
+
+  def update
+
+    if @user.update(user_params)
+      flash[:notice] = "Hey #{@user.username}, your information was updated successfully"
+      redirect_to articles_path
+    else
+      render 'edit'
+    end
+  end
+
+
   private
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
