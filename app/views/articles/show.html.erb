@@ -6,7 +6,7 @@
   <div class="col-8">
     <div class="container text-center shadow mt-4" id='container-about'>
       <div class="card-header regular-text-s">
-        By Maria Vaghani
+        By <%= @article.user.username %>
       </div>
       <div class="card-body">
         <h5 class="card-title text-bold"><%= @article.title %></h5>
