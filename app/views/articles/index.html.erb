@@ -6,31 +6,4 @@
     <a class="btn btn-primary nav-link shadow mt-4" href=<%= new_article_path  %> role="button">Create New Article</a>
   </div>
 </div>
-<% @article_list.each do |article| %>
-  <div class="row justify-content-md-center">
-    <div class="col-8">
-      <div class="container text-center shadow mt-4" id='container-about'>
-        <div class="card-header regular-text-s">
-          By <%= article.user.username %>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-bold" %></h5>
-          <div class="card-text text-left index-card-lr"><%= simple_format(truncate(article.description, length: 100, separator: ' ') { link_to "(more)", article_path(article), class: "text-bold" }) %></div>
-          <p>
-            <%= link_to image_tag("UI Icons_expand.png", height: "50", alt: "View Article"), article_path(article) %>
-            <%= link_to image_tag("UI Icons_edit.png", height: "50", alt: "Edit Article"), edit_article_path(article) %>
-            <%= link_to image_tag("UI Icons_delete.png", height: "50",
-              alt: "View Article"), article_path(article), method: :delete,
-              data: {confirm: "Are you sure you want to delete article #{article.title}?"} %>
-          </p>
-        </div>
-        <div class="card-footer text-muted">
-          <small>
-            Created <%= time_ago_in_words(article.created_at) %> ago,
-            Updated <%= time_ago_in_words(article.updated_at) %> ago
-          </small>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+<%= render 'article' %>

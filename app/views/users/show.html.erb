@@ -1,0 +1,57 @@
+<div class="container" id="container-about">
+  <%= render 'layouts/alpha_blog_logo_header' %>
+</div>
+
+<div class="row justify-content-md-center">
+  <div class="col-8">
+
+    <div class="container text-center shadow mt-4" id='container-about'>
+
+      <div class="card-header regular-text-s">
+         User Profile
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-4">
+            <%= gravatar_for @user %>
+          </div>
+          <div class="col-8">
+            <h5 class="card-title text-bold text-left"><%= @user.username %></h5>
+            <div class="card-text text-left regular-text-s">
+              <%= @user.email %>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="card-footer text-muted">
+        <small>
+          Created <%= time_ago_in_words(@user.created_at) %> ago,
+          Updated <%= time_ago_in_words(@user.updated_at) %> ago
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row justify-content-md-center mt-3">
+  <div class="col-8">
+    <div class="row justify-content-md-center">
+      <div class="col-5">
+        <a class="btn btn-primary nav-link" href=<%= articles_path %> role="button">Back to articles</a>
+      </div>
+      <div class="col-5">
+        <a class="btn btn-primary nav-link" href=<%= edit_user_path(@user) %> role="button">Edit Profile Details</a>
+      </div>
+      <div class="col-2">
+        <%= link_to 'Delete', user_path(@user), method: :delete,
+          data: { confirm: "Are you sure you want to delete article #{@user.username}?" }, class: 'btn btn-primary nav-link' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= render 'articles/article' %>

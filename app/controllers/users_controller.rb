@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def new
     @page_name = 'Sign up for Alpha BLog'
@@ -31,6 +31,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @article_list = @user.articles
+  end
 
   private
   def set_user
