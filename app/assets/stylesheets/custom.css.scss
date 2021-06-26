@@ -101,6 +101,7 @@
   font-family: Stolzl !important;
   font-style: light;
   font-size: 15px;
+  text-decoration: none !important;
 }
 
 .text-bold {
@@ -183,4 +184,8 @@ body {
   flex-shrink: none;
   margin-bottom: 0 !important;
   padding-bottom: 0!important;
+}
+
+#top-space {
+  padding-top: 20px !important;
 }

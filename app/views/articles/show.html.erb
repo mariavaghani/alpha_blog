@@ -9,8 +9,17 @@
         By <%= @article.user.username %>
       </div>
       <div class="card-body">
-        <h5 class="card-title text-bold"><%= @article.title %></h5>
-        <div class="card-text text-left regular-text-s"><%= simple_format(@article.description) %></div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-2">
+            <%= link_to gravatar_for(@article.user, size: 75), @article.user %>
+          </div>
+          <div class="col-10 justify-content-center align-self-center">
+            <h5 class="text-bold text-left"><%= @article.title %></h5>
+          </div>
+        </div>
+        <div class="card-text text-left regular-text-s" id='top-space'>
+          <%= simple_format(@article.description) %>
+        </div>
         <p class="card-text"><i>Tags: </i><%= @article.genre %></p>
       </div>
       <div class="card-footer text-muted">
