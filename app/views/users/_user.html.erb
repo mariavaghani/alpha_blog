@@ -1,0 +1,35 @@
+<% @user_list.each do |user| %>
+  <div class="row justify-content-md-center">
+    <div class="col-8">
+      <div class="container text-center shadow mt-4" id='container-about'>
+        <div class="card-header regular-text-s">
+           User Profile
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+              <%= link_to gravatar_for(user, size: 150), user %>
+            </div>
+            <div class="col-5">
+              <h5 class="card-title text-bold text-left"><%= link_to user.username, user, class: "card-title text-bold text-left" %></h5>
+              <div class="card-text text-left regular-text-s">
+                <%= user.email %><br>
+                <%= pluralize(user.articles.count, 'article') %>
+              </div>
+            </div>
+            <div class="col-3">
+              <%= link_to image_tag("UI Icons_expand.png", height: "50", alt: "View User Profile"), user %>
+              <%= link_to image_tag("UI Icons_edit.png", height: "50", alt: "Edit User Details"), edit_user_path(user) %>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-footer text-muted">
+          <small>
+            Joined <%= time_ago_in_words(user.created_at) %> ago
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

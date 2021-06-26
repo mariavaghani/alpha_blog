@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @page_name = 'Our Authors'
+    @user_list = User.all
+  end
+
   def show
     @article_list = @user.articles
   end
