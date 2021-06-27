@@ -10,13 +10,20 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Articles
+            Content
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href=<%=users_path %>>Our Authors</a></li>
             <li><a class="dropdown-item" href=<%=articles_path %>>All Articles</a></li>
             <li><a class="dropdown-item" href=<%=new_article_path %>>Create New Article</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" aria-current="page" href=<%=login_path%>>Login</a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link font-weight-bold" aria-current="page" href=<%=logout_path%>>Logout</a> -->
+          <%= link_to "Logout", logout_path, class: "nav-link font-weight-bold", method: :delete %>
         </li>
         <li class="nav-item">
           <a class="nav-link font-weight-bold" href="#" tabindex="-1" aria-disabled="true"><%= @page_name %></a>
