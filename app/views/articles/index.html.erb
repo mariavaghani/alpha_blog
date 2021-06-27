@@ -6,4 +6,13 @@
     <a class="btn btn-primary nav-link shadow mt-4" href=<%= new_article_path  %> role="button">Create New Article</a>
   </div>
 </div>
+
+
+<div class="apple_pagination container pagination justify-content-center mt-4 regular-text-s">
+  <%= will_paginate @article_list %>
+</div>
 <%= render 'article' %>
+
+<div class="apple_pagination container pagination justify-content-center top-space mt-4 regular-text-s">
+  <%= will_paginate @article_list %>
+</div>

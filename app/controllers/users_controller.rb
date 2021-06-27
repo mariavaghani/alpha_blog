@@ -33,11 +33,11 @@ class UsersController < ApplicationController
 
   def index
     @page_name = 'Our Authors'
-    @user_list = User.all
+    @user_list = User.paginate(page: params[:page], per_page: 5 )
   end
 
   def show
-    @article_list = @user.articles
+    @article_list = @user.articles.paginate(page: params[:page], per_page: 5 )
   end
 
   private
