@@ -19,7 +19,9 @@
             </div>
             <div class="col-3">
               <%= link_to image_tag("UI Icons_expand.png", height: "50", alt: "View User Profile"), user %>
-              <%= link_to image_tag("UI Icons_edit.png", height: "50", alt: "Edit User Details"), edit_user_path(user) %>
+              <% if logged_in? && user == current_user %>
+                <%= link_to image_tag("UI Icons_edit.png", height: "50", alt: "Edit User Details"), edit_user_path(user) %>
+              <% end %>
             </div>
           </div>
 

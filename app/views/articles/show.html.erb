@@ -40,13 +40,15 @@
       <div class="col-sm">
         <a class="btn btn-primary nav-link" href=<%= articles_path %> role="button">Back to articles</a>
       </div>
-      <div class="col-sm">
-        <a class="btn btn-primary nav-link" href=<%= edit_article_path(@article) %> role="button">Edit</a>
-      </div>
-      <div class="col-sm">
-        <%= link_to 'Delete', article_path(@article), method: :delete,
-          data: { confirm: "Are you sure you want to delete article #{@article.title}?" }, class: 'btn btn-primary nav-link' %>
-      </div>
+      <% if logged_in? && @article.user == current_user %>
+        <div class="col-sm">
+          <a class="btn btn-primary nav-link" href=<%= edit_article_path(@article) %> role="button">Edit</a>
+        </div>
+        <div class="col-sm">
+          <%= link_to 'Delete', article_path(@article), method: :delete,
+            data: { confirm: "Are you sure you want to delete article #{@article.title}?" }, class: 'btn btn-primary nav-link' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

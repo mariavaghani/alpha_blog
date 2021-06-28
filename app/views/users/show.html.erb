@@ -38,13 +38,15 @@
       <div class="col-5">
         <a class="btn btn-primary nav-link" href=<%= articles_path %> role="button">Back to articles</a>
       </div>
-      <div class="col-5">
-        <a class="btn btn-primary nav-link" href=<%= edit_user_path(@user) %> role="button">Edit Profile Details</a>
-      </div>
-      <div class="col-2">
-        <%= link_to 'Delete', user_path(@user), method: :delete,
-          data: { confirm: "Are you sure you want to delete article #{@user.username}?" }, class: 'btn btn-primary nav-link' %>
-      </div>
+      <% if logged_in? && @user == current_user %>
+        <div class="col-5">
+          <a class="btn btn-primary nav-link" href=<%= edit_user_path(@user) %> role="button">Edit Profile Details</a>
+        </div>
+        <div class="col-2">
+          <%= link_to 'Delete', user_path(@user), method: :delete,
+            data: { confirm: "Are you sure you want to delete article #{@user.username}?" }, class: 'btn btn-primary nav-link' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

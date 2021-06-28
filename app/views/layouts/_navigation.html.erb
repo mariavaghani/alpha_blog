@@ -15,16 +15,40 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href=<%=users_path %>>Our Authors</a></li>
             <li><a class="dropdown-item" href=<%=articles_path %>>All Articles</a></li>
-            <li><a class="dropdown-item" href=<%=new_article_path %>>Create New Article</a></li>
+            <% if logged_in? %>
+              <li><a class="dropdown-item" href=<%=new_article_path %>>Create New Article</a></li>
+            <% end %>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link font-weight-bold" aria-current="page" href=<%=login_path%>>Login</a>
-        </li>
-        <li class="nav-item">
-          <!-- <a class="nav-link font-weight-bold" aria-current="page" href=<%=logout_path%>>Logout</a> -->
-          <%= link_to "Logout", logout_path, class: "nav-link font-weight-bold", method: :delete %>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item">
+            <%= link_to current_user.username, user_path(current_user), class: "nav-link font-weight-bold" %>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <% current_user.username %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href=<%=user_path(current_user) %>>User Profile</a></li>
+              <li><a class="dropdown-item" href=<%=edit_user_path(current_user) %>>Edit User Info</a></li>
+
+              <li><a class="dropdown-item" href=<%=new_article_path %>>Create New Article</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <%= link_to "Logout", logout_path, class: "nav-link font-weight-bold", method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign up", signup_path, class: "nav-link font-weight-bold" %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" aria-current="page" href=<%=login_path%>>Login</a>
+          </li>
+        <% end %>
         <li class="nav-item">
           <a class="nav-link font-weight-bold" href="#" tabindex="-1" aria-disabled="true"><%= @page_name %></a>
         </li>
