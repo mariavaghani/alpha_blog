@@ -15,9 +15,6 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href=<%=users_path %>>Our Authors</a></li>
             <li><a class="dropdown-item" href=<%=articles_path %>>All Articles</a></li>
-            <% if logged_in? %>
-              <li><a class="dropdown-item" href=<%=new_article_path %>>Create New Article</a></li>
-            <% end %>
           </ul>
         </li>
         <% if logged_in? %>
@@ -34,6 +31,11 @@
               <li><a class="dropdown-item" href=<%=edit_user_path(current_user) %>>Edit User Info</a></li>
 
               <li><a class="dropdown-item" href=<%=new_article_path %>>Create New Article</a></li>
+              <div class="dropdown-divider"></div>
+              <li>
+                <%= link_to 'Delete User Profile', user_path(current_user), method: :delete,
+                  data: { confirm: "Are you sure you want to delete #{current_user.username}'s profile and all articles they created?" }, class: 'dropdown-item text-danger' %>
+              </li>
             </ul>
           </li>
 

@@ -44,7 +44,7 @@
         </div>
         <div class="col-2">
           <%= link_to 'Delete', user_path(@user), method: :delete,
-            data: { confirm: "Are you sure you want to delete article #{@user.username}?" }, class: 'btn btn-primary nav-link' %>
+            data: { confirm: "Are you sure you want to delete #{@user.username}'s user profile and all their articles?" }, class: 'btn btn-primary nav-link' %>
         </div>
       <% end %>
     </div>

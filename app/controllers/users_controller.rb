@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:show, :index, :new, :create]
+  before_action :require_same_user, only: [:edit, :update]
 
   def new
     @page_name = 'Sign up for Alpha BLog'
@@ -23,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
     if @user.update(user_params)
       flash[:notice] = "Hey #{@user.username}, your information was updated successfully"
       redirect_to @user
@@ -41,6 +42,14 @@ class UsersController < ApplicationController
     @article_list = @user.articles.paginate(page: params[:page], per_page: 5 )
   end
 
+  def destroy
+    @name = @user.username
+    @user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "The user #{@name} and their associated articles were successfully deleted"
+    redirect_to root_path
+  end
+
   private
   def set_user
     @user = User.find(params[:id])
@@ -48,5 +57,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:alert] = "You could only edit or delete your own profile details"
+      redirect_to @user
+    end
   end
 end
