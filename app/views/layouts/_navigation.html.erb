@@ -18,13 +18,10 @@
           </ul>
         </li>
         <% if logged_in? %>
-          <li class="nav-item">
-            <%= link_to current_user.username, user_path(current_user), class: "nav-link font-weight-bold" %>
-          </li>
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <% current_user.username %>
+              <%= "[admin]" if current_user.admin? %>
+              <%= current_user.username %>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href=<%=user_path(current_user) %>>User Profile</a></li>
@@ -38,8 +35,6 @@
               </li>
             </ul>
           </li>
-
-
           <li class="nav-item">
             <%= link_to "Logout", logout_path, class: "nav-link font-weight-bold", method: :delete %>
           </li>

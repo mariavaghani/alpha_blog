@@ -40,7 +40,7 @@
       <div class="col-sm">
         <a class="btn btn-primary nav-link" href=<%= articles_path %> role="button">Back to articles</a>
       </div>
-      <% if logged_in? && @article.user == current_user %>
+      <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
         <div class="col-sm">
           <a class="btn btn-primary nav-link" href=<%= edit_article_path(@article) %> role="button">Edit</a>
         </div>

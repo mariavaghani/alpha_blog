@@ -10,17 +10,22 @@
             <div class="col-4">
               <%= link_to gravatar_for(user, size: 150), user %>
             </div>
-            <div class="col-5">
+            <div class="col-4">
               <h5 class="card-title text-bold text-left"><%= link_to user.username, user, class: "card-title text-bold text-left" %></h5>
               <div class="card-text text-left regular-text-s">
                 <%= user.email %><br>
                 <%= pluralize(user.articles.count, 'article') %>
               </div>
             </div>
-            <div class="col-3">
-              <%= link_to image_tag("UI Icons_expand.png", height: "50", alt: "View User Profile"), user %>
-              <% if logged_in? && user == current_user %>
-                <%= link_to image_tag("UI Icons_edit.png", height: "50", alt: "Edit User Details"), edit_user_path(user) %>
+            <div class="col-4">
+              <%= link_to image_tag("UI Icons_expand.png", height: "45", alt: "View User Profile"), user %>
+              <% if logged_in? && (user == current_user || current_user.admin?) %>
+                <%= link_to image_tag("UI Icons_edit.png", height: "45", alt: "Edit User Details"), edit_user_path(user) %>
+                <% if current_user.admin? %>
+                  <%= link_to image_tag("UI Icons_delete.png", height: "45",
+                    alt: "Delete User"), user_path(user), method: :delete,
+                    data: {confirm: "Are you sure you want to delete #{user.username}'s user profile and all their articles?"} %>
+                <% end %>
               <% end %>
             </div>
           </div>
