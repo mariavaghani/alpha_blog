@@ -1,0 +1,39 @@
+<div class="container" id="container-about">
+  <%= render 'layouts/alpha_blog_logo_header' %>
+</div>
+<%= render 'shared/errors', obj: @category %>
+
+
+<%= form_with(model: @category, local: true) do |f| %>
+  <div class="row justify-content-md-center">
+    <div class="col-8 text-center">
+      <div class="spacious-rl-160" id='container-about'>
+        <div class="form-group regular-text">
+          <%= f.label :cat_name, "Name the category"  %><br>
+          <%= f.text_field :cat_name, class: "form-control text-center", placeholder: "enter name of category" %>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <div class="col-8">
+      <div class="container" id='container-buttons'>
+        <div class="row">
+          <div class="col-sm">
+            <a class="btn btn-primary nav-link btn-100" href=<%= root_path %> role="button">main</a>
+          </div>
+          <div class="col-sm">
+            <a class="btn btn-primary nav-link btn-100" href=<%= articles_path %> role="button">articles</a>
+          </div>
+          <div class="col-sm">
+            <%= f.submit(@category.new_record? ? "Save Category" : "Update", class: "btn btn-primary nav-link submit-btn", style: "height:100%; width:100%") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

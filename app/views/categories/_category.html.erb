@@ -1,0 +1,17 @@
+<% @category_list.each do |category| %>
+  <div class="row justify-content-md-center">
+    <div class="col-8">
+      <div class="container text-center shadow mt-4" id='container-about'>
+
+        <div class="card-body">
+          <h5 class="card-title text-bold text-center"><%= link_to category.cat_name, category_path(category), class: "card-title text-bold text-left" %></h5>
+        </div>
+        <div class="card-footer text-muted">
+          <small>
+            Created <%= time_ago_in_words(category.created_at) %> ago
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
