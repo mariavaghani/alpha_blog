@@ -20,17 +20,17 @@
         <div class="card-text text-left regular-text-s" id='top-space'>
           <%= simple_format(@article.description) %>
         </div>
-        <p class="card-text"><i>Tags: </i><%= @article.genre %></p>
+        <p class="card-text regular-text-s">
+          <i>Tags: </i>
+          <% if @article.categories.any? %>
+            <%= render @article.categories %>
+          <% end %>
+        </p>
       </div>
-      <div class="card-footer text-muted">
-        <small>
-          Created <%= time_ago_in_words(@article.created_at) %> ago,
-          Updated <%= time_ago_in_words(@article.updated_at) %> ago
-        </small>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="card-footer text-muted"> <small> Created
+        <%= time_ago_in_words(@article.created_at) %> ago, Updated <%=
+        time_ago_in_words(@article.updated_at) %> ago </small> </div> </div>
+        </div> </div>
 
 
 

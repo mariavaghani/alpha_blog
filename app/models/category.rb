@@ -1,4 +1,8 @@
 class Category < ApplicationRecord
+
+  has_many :article_categories
+  has_many :articles, through: :article_categories
+
   validates :cat_name, presence: true, length: {minimum: 5, maximum: 25}
   validates_uniqueness_of :cat_name, :message => '%{value} has already been taken'
 

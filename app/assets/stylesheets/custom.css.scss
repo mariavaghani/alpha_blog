@@ -100,8 +100,26 @@
   color: #707070 !important;
   font-family: Stolzl !important;
   font-style: light;
-  font-size: 15px;
+  font-size: 15px !important;
   text-decoration: none !important;
+}
+
+.regular-text-s:link {
+  color: #707070 !important;
+  font-family: Stolzl !important;
+  font-style: light !important;
+  font-size: 15px !important;
+  text-decoration: none !important;
+  font-weight: normal !important;
+}
+
+.regular-text-s:hover {
+  color: #707070 !important;
+  font-family: Stolzl !important;
+  font-style: light !important;
+  font-size: 15px !important;
+  text-decoration: underline !important;
+  font-weight: normal !important;
 }
 
 .text-bold {

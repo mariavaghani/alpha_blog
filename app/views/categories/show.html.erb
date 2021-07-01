@@ -1,1 +1,20 @@
-<h1><%= @category.cat_name %></h1>
+<div class="container justify-content-center mt-4 alpha-blog-logo">
+  <%= @category.cat_name %>
+</div>
+<% if logged_in? && current_user.admin? %>
+  <div class="row justify-content-md-center">
+    <div class="col-8">
+      <a class="btn btn-primary nav-link shadow mt-4" href=<%= edit_category_path(@category)  %> role="button">Edit</a>
+    </div>
+  </div>
+<% end %>
+
+<div class="apple_pagination container pagination justify-content-center mt-4 regular-text-s">
+  <%= will_paginate @article_list %>
+</div>
+
+<%= render 'articles/article' %>
+
+<div class="apple_pagination container pagination justify-content-center mt-4 regular-text-s">
+  <%= will_paginate @article_list %>
+</div>

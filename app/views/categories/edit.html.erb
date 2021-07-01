@@ -1,0 +1,11 @@
+<div class="container" id="container-about">
+  <%= render 'layouts/alpha_blog_logo_header' %>
+</div>
+
+<div class="row justify-content-md-center">
+  <div class="col-4">
+    <a class="btn btn-primary nav-link shadow mt-4" href=<%= category_path(@category)  %> role="button">cancel and return back to <%= @category.cat_name %></a>
+  </div>
+</div>
+
+<%= render 'form' %>

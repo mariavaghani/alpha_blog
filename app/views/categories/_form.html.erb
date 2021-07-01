@@ -1,6 +1,4 @@
-<div class="container" id="container-about">
-  <%= render 'layouts/alpha_blog_logo_header' %>
-</div>
+
 <%= render 'shared/errors', obj: @category %>
 
 
@@ -23,10 +21,7 @@
       <div class="container" id='container-buttons'>
         <div class="row">
           <div class="col-sm">
-            <a class="btn btn-primary nav-link btn-100" href=<%= root_path %> role="button">main</a>
-          </div>
-          <div class="col-sm">
-            <a class="btn btn-primary nav-link btn-100" href=<%= articles_path %> role="button">articles</a>
+            <a class="btn btn-primary nav-link btn-100" href=<%= categories_path %> role="button">cancel and return back to categories</a>
           </div>
           <div class="col-sm">
             <%= f.submit(@category.new_record? ? "Save Category" : "Update", class: "btn btn-primary nav-link submit-btn", style: "height:100%; width:100%") %>

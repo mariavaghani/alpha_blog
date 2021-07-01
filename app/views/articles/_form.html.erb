@@ -11,24 +11,24 @@
         <%= f.label :title  %><br>
         <%= f.text_field :title, class: "form-control", placeholder: "title your article" %>
       </div>
-      <div class="col-sm form-group regular-text">
-        <%= f.label :genre %><br>
-        <%= f.text_field :genre, class: "form-control", placeholder: 'genre' %>
-      </div>
+
     </div>
     <div class="form-group regular-text">
       <%= f.label :description %> <br>
       <%= f.text_area :description, rows:7, class: "form-control", placeholder: 'Write your article here' %>
+    </div>
+
+    <div class="form-group regular-text">
+      <%= f.label :category %> <br>
+      <%= f.collection_select(:category_ids, Category.all, :id, :cat_name,
+          {prompt: "Choose your categories (or not)"}, { multiple: true, size:5, class: "custom-select form-control" } ) %>
     </div>
   </div>
 
   <div class="container" id='container-buttons'>
     <div class="row">
       <div class="col-sm">
-        <a class="btn btn-primary nav-link btn-100" href=<%= root_path %> role="button">main</a>
-      </div>
-      <div class="col-sm">
-        <a class="btn btn-primary nav-link btn-100" href=<%= articles_path %> role="button">articles</a>
+        <a class="btn btn-primary nav-link btn-100" href=<%= articles_path %> role="button">cancel and return back to articles</a>
       </div>
       <div class="col-sm">
         <%= f.submit "Save Article", class: "btn btn-primary nav-link submit-btn", style: "height:100%; width:100%" %>
